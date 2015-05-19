@@ -5,62 +5,68 @@ import random
 CELLS = [(0,0), (0,1), (0,2),
         (1,0), (1,1), (1,2),
         (2,0), (2,1), (2,2)]
+#a list of tuples
 
 def get_locations():
   # monster = random
-    monsterX = random.choice(range(0,2))
-    monsterY = random.choice(range(0,2))
+    monster_coord = random.choice(CELLS)
   
   # door = random
-    doorX = random.choice(range(0,2))
-    doorY = random.choice(range(0,2))
+    door_coord = random.choice(CELLS)
 
   # start = random
-    startX = random.choice(range(0,2))
-    startY = random.choice(range(0,2))
+    start_coord = random.choice(CELLS)
 
   # if monster, door, or start are the same, do it again
-    startX, startY = reroll(startX, startY, monsterX, monsterY)
-    startX, startY = reroll(startX, startY, doorX, doorY)
-    doorX, doorY = reroll(monsterX, monsterY, doorX, doorY)
-#No sense getting eaten just before you escape 
-    monster_coord = (monsterX, monsterY)
-    door_coord = (doorX, doorY)
-    start_coord = (startX, startY)
-    
-    return monster_coord, door_coord, start_coord 
-  
-  # return monster, door, start
-  
-def reroll(playerX, playerY, otherX, otherY):
-    if playerX == otherX and playerY == otherY:
-        playerX = random.choice(range(0,2))
-        playerY = random.choice(range(0,2))
-    else:
-        return playerX, playerY
+    if monster_coord == door_coord or monster_coord == start_coord or door_coord == start_coord:
+        return get_locations() 
 
-  
-def move_player(player, move):
-  # Get the player's current location
+    return monster_coord, door_coord, start_coord 
+
+
+def move_player(player, move): 
+   # Get the player's current location
+   #player  = x, y
+  x, y = player 
   # If move is LEFT, y - 1
+  if move == "LEFT":
+      y -= 1
   # If move is RIGHT, y + 1
+  elif move == "RIGHT":
+     y += 1
   # If move is UP, x - 1
+  elif move == "UP":
+     x -= 1
   # If move is DOWN, x + 1
-  return player
+  elif move == "DOWN":
+     x += 1   
+  return x, y
 
 
 def get_moves(player):
-  MOVES = ['LEFT', 'RIGHT', 'UP', 'DOWN']
+  #player = x, y 
+  moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
   # if player's y is 0, remove LEFT
-  # if player's x is 0, remove UP
+  if player[1] == 0:
+      moves.remove("LEFT")
   # if player's y is 2, remove RIGHT
+  if player[1] == 2:
+      moves.remove("RIGHT")
+  # if player's x is 0, remove UP
+  if player[0] == 0:
+      moves.remove("UP")
   # if player's x is 2, remove DOWN
-  return MOVES
+  if player[0] == 2:
+      moves.remove("DOWN") 
+  return moves
+
+monster, door, player = get_locations()
 
 while True:
+  moves = get_moves(player) 
   print("Welcome to the dungeon!")
   print("You're currently in room {}")  # fill in with player position
-  print("You can move {}")  # fill in with available moves
+  print("You can move {}".format(moves))  # fill in with available moves
   print("Enter QUIT to quit")
   
   move = input("> ")
@@ -70,7 +76,26 @@ while True:
     break
     
   # If it's a good move, change the player's position
-  # If it's a bad move, don't change anything
+  if move in moves:
+      player = move_player(player, move)
+#change player to x, y? 
+#no, player = a tuple returned from the function 
+   # If it's a bad move, don't change anything
+  else:
+      print "Walls are hard. Stop walking into them. " 
+      continue
+
+ 
+
   # If the new player position is the door, they win!
+  if player == door:
+      print "You found your way out of the maze! "
+      break
+  elif player == monster:
+      print "You were eaten by the grue. "
+      break 
+#I typed the same joke before making changes
+#Are nerds that predictable? Yes 
+
   # If the new player position is the monster, they lose!
   # Otherwise, continue
