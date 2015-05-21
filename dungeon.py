@@ -7,6 +7,23 @@ CELLS = [(0,0), (0,1), (0,2),
         (2,0), (2,1), (2,2)]
 #a list of tuples
 
+def draw_map():
+    print "___"
+    tile = '|{}'
+    for idx, cell in enumerate(CELLS):
+        if idx in [0, 1, 3, 4, 6, 7]:
+            if cell == player:
+                #print(tile.format('X'), end='')
+                print(tile.format('X')
+            else:
+                #print(tile.format('_'), end='')
+                print (tile.format('_')
+        else:
+            if cell == player:
+                print(tile.format('X|'))
+            else:
+                print(tile.format('_|'))
+
 def get_locations():
   # monster = random
     monster_coord = random.choice(CELLS)
@@ -61,10 +78,10 @@ def get_moves(player):
   return moves
 
 monster, door, player = get_locations()
+print("Welcome to the dungeon!")
 
 while True:
   moves = get_moves(player) 
-  print("Welcome to the dungeon!")
   print("You're currently in room {}")  # fill in with player position
   print("You can move {}".format(moves))  # fill in with available moves
   print("Enter QUIT to quit")
@@ -99,3 +116,5 @@ while True:
 
   # If the new player position is the monster, they lose!
   # Otherwise, continue
+
+  #Change your player to a dictionary with a key that holds onto where the player has been. Then, when drawing the map, show . for every cell they've been in.
