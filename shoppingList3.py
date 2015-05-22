@@ -53,6 +53,7 @@ while True:
             for item in new_list:
                 shopping_list.append(item.strip())
             
-#So it fills the list with the last time of the list
-                #Has there even been a list made? Need to check on new_list
+#Make it possible to move items from one position to another
+#Change the formatting of the list display
+#Create a CLEAR command that removes everything from the list
           
