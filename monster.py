@@ -2,6 +2,7 @@ import random
 
 COLORS = ['yellow','green','black', 'red', 'blue']
 
+#warning: I have not run and refactor the code, I will do so
 
 class Monster:
     min_hit_points = 1

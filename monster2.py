@@ -1,9 +1,10 @@
 import random
+from combat import Combat
 
 COLORS = ['yellow','green','black', 'red', 'blue']
+#warning: it is not tested yet. I will need to run and refactor this code
 
-
-class Monster:
+class Monster(Combat):
     min_hit_points = 1
     max_hit_points = 1
     min_experience = 1
@@ -25,7 +26,7 @@ class Monster:
     def __str__(self):
         return '{} {} HP:{} XP:{} '.format(self.color.title(), self.__class__.__name__, self.hit_points, self.experience)
 
-         
+         #will need to add get_hit method
 
 class Goblin(Monster):
     max_hit_points = 3
