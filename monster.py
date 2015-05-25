@@ -1,8 +1,15 @@
+import random
+
+COLORS = ['yellow','green','black', 'red', 'blue']
+
+
 class Monster:
-    #hit_points = 1
-    #color = 'green'
-    #weapon = 'knife'
-    #sound = 'roar'
+    min_hit_points = 1
+    max_hit_points = 1
+    min_experience = 1
+    max_experience = 1
+    weapon = 'knife'
+    sound = 'roar'
 
 #hit_points=5, color='green', weapon='knife', sound='roar'
 
@@ -16,12 +23,12 @@ class Monster:
         return self.sound.upper()
         
 
-boss = Monster(hit_points=9000, color='red', weapon='cannon', sound='alala')
+#boss = Monster(hit_points=9000, color='red', weapon='cannon', sound='alala')
 #boss.hit_points = 9000
 #boss.color = 'red'
 #boss.weapon = 'cannon'
 #boss.sound = 'alala'
-boss.battlecry()
+#boss.battlecry()
 
 
 class Store:
