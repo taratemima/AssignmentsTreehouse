@@ -5,6 +5,7 @@ COLORS = ['yellow','green','black', 'red', 'blue']
 #warning: I have not run and refactor the code, I will do so
 
 class Monster:
+'''Creating a monster, including hit points, experience, weapon, and sound'''
     min_hit_points = 1
     max_hit_points = 1
     min_experience = 1
@@ -21,6 +22,7 @@ class Monster:
         self.sound = kwargs.get(sound,'roar')
 
     def battlecry(self):
+'''What it yells when it is near you'''
         return self.sound.upper()
         
 
@@ -33,6 +35,7 @@ class Monster:
 
 
 class Store:
+'''Print opening hours for a store'''
     open = 7
     close = 20
 

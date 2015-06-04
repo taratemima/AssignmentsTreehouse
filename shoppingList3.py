@@ -1,10 +1,12 @@
 shopping_list = list()
 
 def show_help():
+'''Show menu and instructions'''
     print("\nSeparate each item with a comma. ")
     print("Enter DONE when you are finished adding to the list, SHOW to see the current items in the list, and HELP for this message. ")
 
 def show_list():
+'''Show list created so far'''
     count = 1
     for new_item in shopping_list:
         print("{}:{}".format(count, new_item))

@@ -8,6 +8,7 @@ CELLS = [(0,0), (0,1), (0,2),
 #a list of tuples
 
 def draw_map():
+'''Draw map for game'''
     print("__")
     tile = '|{}'
     for idx, cell in enumerate(CELLS):
@@ -25,6 +26,7 @@ def draw_map():
                 print(tile.format('_|'))
 
 def get_locations():
+'''Assign random locations for monster, door, and player'''
 # monster = random
     monster_coord = random.choice(CELLS)
 # door = random
@@ -38,6 +40,7 @@ def get_locations():
 
 
 def move_player(player, move): 
+'''Move player along x and y grid'''
 # Get the player's current location
 #player  = x, y
     x, y = player 
@@ -57,6 +60,7 @@ def move_player(player, move):
 
 
 def get_moves(player):
+'''Get player current location and moves available'''
 #player = x, y 
     moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
 # if player's y is 0, remove LEFT

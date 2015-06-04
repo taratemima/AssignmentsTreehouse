@@ -9,16 +9,19 @@ days = int(age) * 52 * 7
 summary = "I am  {} days old!".format(days)
 
 def add_list(listOfNum):
+'''Add list of numbers up in one total'''
   total = 0
   for n in listOfNum:
     total += n
   return total 
 
 def summarize(listOfNum):
+'''Print list of numbers and total'''
   total = add_list(listOfNum)
   return "The sum of {} is {}.".format(listOfNum, total)
 
 def random_num(number):
+'''Create random number between one and the variable'''
   return random.randint(1, number) 
 
 list_1 = ["pear","peach","plum"]
@@ -52,12 +55,15 @@ def first_and_last_4(sampleList):
   return first4+last4
 
 def sillycase(sampleString):
+'''Lower case letters between the beginning of the string and middle of string, and upper case letters between the 
+middle of the string and the end of the string'''
   midpoint = round(int(len(sampleString))/2)
   firstPart = sampleString[:midpoint].lower()
   lastPart = sampleString[midpoint:].upper()
   return firstPart+lastPart
 
 def members(used_dict, keylist):
+'''Counting added keys in a dictionary from a key list'''
   total = 0
   for k in keylist:
     if k in used_dict.keys():
@@ -65,6 +71,7 @@ def members(used_dict, keylist):
   return total
 
 def word_count(sampleString):
+'''Converting string into a dictionary with tokens and counts'''
   newDict = dict()
   wordlist = sampleString.split()
   for w in wordlist:
@@ -88,11 +95,13 @@ dicts = [
 string = "Hi, I'm {name} and I love to eat {food}!"
 statements = list()
 def string_factory(dicts, string):
+'''Creating new statements from a list of dictionaries'''
   for d in dicts:
     statements.append(string.format(**d))
   return statements
 
 def most_classes(teacherDict):
+'''Finding which teacher has the most classes from a teacher dictionary'''
   max_count = 0
   answer = ''
   for teacher, classList in teacherDict.items():
@@ -102,15 +111,18 @@ def most_classes(teacherDict):
   return answer 
 
 def num_teachers(teacherDict):
+'''Finding out how many teachers are in teacher dictionary'''
   return len(teacherDict.keys())
 
 def stats(teacherDict):
+'''Creating a list of list of teachers and number of classes they have'''
   listOflists = list()
   for teacher, classList in teacherDict.items():
     listOflists.append([teacher, len(classList)])
   return listOflists 
 
 def courses(teacherDict):
+'''Creating a list of all the courses taught'''
   all_classes = list()
   for v in teacherDict.values():
     all_classes.extend(v)
@@ -119,11 +131,13 @@ def courses(teacherDict):
 #I first did courses with two for loops.  I decided to take a list convulted route for lists
 
 def stringcases(sampleString):
+'''Changing cases for one string'''
   return (sampleString.upper(), sampleString.lower(), sampleString.title(), sampleString[::-1])
 
 #last one reverses the string, and does str have reverse as a method?
 
 def combo(iter1, iter2):
+'''Combining two lists into tuples for the same list index'''
   tupleList = list()
   for index1, item1 in enumerate(iter1):
     for index2, item2 in enumerate(iter2):

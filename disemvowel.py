@@ -1,3 +1,5 @@
+'''Remove vowels from items in list and capitalize as needed'''
+
 vowels = list('aeiou')
 words = ["Arcadia","vision","xylophone","polymer"]
 output_list = list()

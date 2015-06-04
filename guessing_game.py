@@ -1,5 +1,5 @@
 import random
-
+'''Guess a random number between 1 to 100 in 10 guesses'''
 the_number = random.randint(1,100)
 total_guesses = list()
 allowed_guesses = 10

@@ -4,6 +4,7 @@ from Question import Addition, Multiply
 #needs to be tested 
 
 class Quiz:
+'''Makes lists of quiz questions and their answers'''
     questions = list() 
     answers = list()
 
@@ -21,6 +22,7 @@ class Quiz:
             self.questions.append()
 
     def take_quiz(self):
+'''Creates quiz and timer, needs functions'''
         #log the start time
         #ask all of the questions
         #log if they got the question correct
@@ -29,6 +31,7 @@ class Quiz:
         pass 
    
    def ask(self, question):
+'''Asks questions, needs functions'''
        pass
 
        #log the start time
@@ -40,6 +43,7 @@ class Quiz:
        #send back the elapsed time
   
   def total_correct(self):
+'''Returns total of questions answered correctly'''
       #return total number correct answers 
       total = 0
       for answer in self.answers:
@@ -49,6 +53,7 @@ class Quiz:
      
 
   def summary(self):
+'''Prints total correct and time it took'''
        #print total you got right
        print("You've got {} out of {} correct".format(self.total_correct, len(self.questions))
 

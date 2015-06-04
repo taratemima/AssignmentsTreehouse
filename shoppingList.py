@@ -1,4 +1,4 @@
-
+'''Simple version of shopping list'''
 
 shopping_list = list()
 
