@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=artist\ title\ videoUrl
+comment0.target=Song(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ getTitle()
+comment2.params=
+comment2.target=java.lang.String\ getArtist()
+comment3.params=
+comment3.target=java.lang.String\ getVideoUrl()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

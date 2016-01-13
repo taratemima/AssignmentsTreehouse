@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SongBook()
+comment1.params=fileName
+comment1.target=void\ exportTo(java.lang.String)
+comment2.params=fileName
+comment2.target=void\ importFrom(java.lang.String)
+comment3.params=song
+comment3.target=void\ addSong(Song)
+comment4.params=
+comment4.target=int\ getSongCount()
+comment5.params=
+comment5.target=java.util.Map\ byArtist()
+comment6.params=
+comment6.target=java.util.Set\ getArtists()
+comment7.params=artistName
+comment7.target=java.util.List\ getSongsForArtist(java.lang.String)
+comment8.params=song1\ song2
+comment8.target=int\ compare(Song,\ Song)
+numComments=9

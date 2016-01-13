@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=songBook
+comment0.target=KaraokeMachine(SongBook)
+comment1.params=
+comment1.target=java.lang.String\ promptAction()
+comment2.params=
+comment2.target=void\ run()
+comment3.params=
+comment3.target=Song\ promptNewSong()
+comment4.params=
+comment4.target=java.lang.String\ promptArtist()
+comment5.params=artist
+comment5.target=Song\ promptSongForArtist(java.lang.String)
+comment6.params=options
+comment6.target=int\ promptForIndex(java.util.List)
+comment7.params=
+comment7.target=void\ playNext()
+numComments=8
